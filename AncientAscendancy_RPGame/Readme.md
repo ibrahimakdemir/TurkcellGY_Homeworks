@@ -6,7 +6,7 @@
 
 ## 🔎Overview
 
-This project was developed with the aim of reinforcing my knowledge of object-oriented programming concepts in C#. Through the development of the Divine Ascension game, I was able to implement several core OOP principles such as inheritance, encapsulation, polymorphism, and abstraction, which I learned from the OOP topics taught by our instructor Türkay Ürkmez during the TurkcellGY training camp.
+This project was developed with the aim of reinforcing my knowledge of object-oriented programming concepts in C#. Through the development of the Divine Ascension game, I was able to implement several core OOP principles such as inheritance, encapsulation, polymorphism, and abstraction, which I learned from the OOP topics taught by our instructor [Türkay Ürkmez](https://github.com/turkayurkmez) during the TurkcellGY training camp.
 
 Divine Ascension is a turn-based console game developed using object-oriented programming concepts in C#. The game features characters with different weapons, each with unique damage and accuracy ratings, as well as a currency system that allows players to purchase new weapons. The game takes place in an ancient world where players embark on a quest to reach the peak of Mount Olympus and obtain the power of the gods.
 
