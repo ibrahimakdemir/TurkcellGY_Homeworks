@@ -103,17 +103,17 @@ public class PasswordChecker
         if (countLetter == password.Length || countNumber == password.Length)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            return "ZAYIF";
+            return "WEAK";
         }
         else if (countLetter > 0 && countNumber > 0 && countSymbol == 0)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            return "ORTA";
+            return "MEDIUM";
         }
         else
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            return "GÜÇLÜ";
+            return "STRONG";
         }
     }
 
