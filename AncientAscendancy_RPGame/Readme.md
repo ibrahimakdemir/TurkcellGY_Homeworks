@@ -1,9 +1,7 @@
 ﻿# Divine Ascension - An OOP Console Game
 
-<div style="background-color: #C24641; padding: 10px;">
-    <p><strong>⚠️</strong> This project is currently in the planning stage and has not yet been developed. The storyline and game concept have been determined, but the game itself is not yet playable. I will update this Readme file as progress is made on the project.</p>
-</div>
-
+> **⚠️ This project is currently in the planning stage and has not yet been developed. The storyline and game concept have been determined, but the game itself is not yet playable. I will update this Readme file as progress is made on the project.**
+> 
 ## 🔎Overview
 
 This project was developed with the aim of reinforcing my knowledge of object-oriented programming concepts in C#. Through the development of the Divine Ascension game, I was able to implement several core OOP principles such as inheritance, encapsulation, polymorphism, and abstraction, which I learned from the OOP topics taught by our instructor [Türkay Ürkmez](https://github.com/turkayurkmez) during the TurkcellGY training camp.
