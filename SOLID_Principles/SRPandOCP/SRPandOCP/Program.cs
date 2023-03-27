@@ -34,7 +34,7 @@ namespace SRPandOCP
         {
             IMailServer mailServer = null;
 
-            // Hangi servisin kullanılacağını kontrol et
+            
             if (to.EndsWith("@gmail.com"))
             {
                 mailServer = new Gmail();
@@ -49,7 +49,7 @@ namespace SRPandOCP
             }
             else
             {
-                Console.WriteLine("Geçersiz mail adresi");
+                Console.WriteLine("Invalid Mail Address");
                 return;
             }
 
@@ -85,14 +85,8 @@ namespace SRPandOCP
     {
         public void Send(string to, string body, string subject)
         {
-            string from = "otomasyondenememail@gmail.com"; // Gmail hesabınızın adresini girin
-            string password = "tqxvlygcleosbvxv"; // Gmail hesabınızın şifresini girin
-
-            //SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            //smtpClient.EnableSsl = true;
-            //smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //smtpClient.UseDefaultCredentials = false;
-            //smtpClient.Credentials = new NetworkCredential(from, password);
+            string from = "otomasyondenememail@gmail.com";
+            string password = "tqxvlygcleosbvxv";
 
             SmtpMailServer smtpMailServer = new SmtpMailServer();
             smtpMailServer.SmtpService(from,to,password,subject,body,"gmail");
