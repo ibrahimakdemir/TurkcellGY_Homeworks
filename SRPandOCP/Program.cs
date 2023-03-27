@@ -38,7 +38,7 @@ namespace SRPandOCP
             {
                 mailServer = new Gmail();
             }
-            else if (to.EndsWith("@hotmail.com"))
+            else if (to.EndsWith("@hotmail.com") || to.EndsWith("@outlook.com"))
             {
                 mailServer = new Hotmail();
             }
