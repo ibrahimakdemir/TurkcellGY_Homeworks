@@ -1,1 +1,5 @@
-﻿
+﻿# Single Responsibility and Open-Closed Principles
+
+* The Single Responsibility Principle states that each class and function should have only one responsibility. According to this principle, more readable and maintainable code can be written, as classes and functions should perform a single function. In this code, the MailSender class only manages the email sending process and the Send() method is defined with the IMailServer interface. In this way, the MailSender class only handles sending emails, while other classes (Gmail, Hotmail, Yandex) should have the necessary features to perform this operation.
+
+* The Open-Closed principle states that a class or function should be able to add new features without changing existing code. According to this principle, a class or function should be extensible and unmodifiable. In this code, if you want to add a new e-mail service, you only need to create a class that implements the IMailServer interface. For a new service, it is not necessary to modify the MailSender class or the code of other services. This shows that the code is easily extensible.
