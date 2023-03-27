@@ -1,6 +1,5 @@
-﻿
+﻿using System.Net.Mail;
 using System.Net;
-using System.Net.Mail;
 
 namespace SRPandOCP
 {
@@ -34,7 +33,7 @@ namespace SRPandOCP
         {
             IMailServer mailServer = null;
 
-            
+
             if (to.EndsWith("@gmail.com"))
             {
                 mailServer = new Gmail();
@@ -58,13 +57,6 @@ namespace SRPandOCP
 
     }
 
-    interface IMailServer
-    {
-        void Send(string to, string body, string subject);
-
-    }
-
-
     class SmtpMailServer
     {
         public void SmtpService(string from, string to, string password, string subject, string body, string serviceName)
@@ -81,6 +73,12 @@ namespace SRPandOCP
         }
     }
 
+    interface IMailServer
+    {
+        void Send(string to, string body, string subject);
+
+    }
+
     class Gmail : IMailServer
     {
         public void Send(string to, string body, string subject)
@@ -89,9 +87,9 @@ namespace SRPandOCP
             string password = "tqxvlygcleosbvxv";
 
             SmtpMailServer smtpMailServer = new SmtpMailServer();
-            smtpMailServer.SmtpService(from,to,password,subject,body,"gmail");
-            
-            
+            smtpMailServer.SmtpService(from, to, password, subject, body, "gmail");
+
+
         }
     }
     class Hotmail : IMailServer
@@ -117,5 +115,26 @@ namespace SRPandOCP
         }
     }
 
+    class WithoutSOLID
+    {
+        public void MailSend(string to, string subject, string body)
+        {
 
+            MailMessage mail = new MailMessage();
+            mail.To.Add(to);
+            mail.From = new MailAddress("otomasyondenememail@gmail.com");
+            mail.Subject = subject;
+            mail.Body = body;
+            mail.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Port = 587;    //25 465
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Credentials = new NetworkCredential("otomasyondenememail@gmail.com", "tqxvlygcleosbvxv");
+            smtp.Send(mail);
+
+        }
+    }
 }
