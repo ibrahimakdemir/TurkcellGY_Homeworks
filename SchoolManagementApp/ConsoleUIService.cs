@@ -10,8 +10,6 @@ namespace SchoolManagementApp
 {
     public class ConsoleUIService
     {
-        
-
         public void Welcome()
         {
             Console.ForegroundColor = ConsoleColor.Green;

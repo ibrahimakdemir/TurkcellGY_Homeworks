@@ -4,6 +4,7 @@
 SchoolService schoolService = new SchoolService();
 
 ConsoleUIService consoleUIService = new ConsoleUIService();
+consoleUIService.Welcome();
 
 int choice = 0;
 int n;
