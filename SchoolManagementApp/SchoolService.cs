@@ -20,11 +20,14 @@ namespace SchoolManagementApp
         {
             if (_repository.GetClassByName(className) != null)
             {
-                throw new Exception("Class already exists!");
+                Console.WriteLine("Class already exists!");
             }
-
-            _repository.Add(new Classes { Name = className });
-            Console.WriteLine("Class added!");
+            else
+            {
+                _repository.Add(new Classes { Name = className });
+                Console.WriteLine("Class added!");
+            }
+            
         }
 
         public void AddStudent(string className, Students newStudent)
@@ -33,11 +36,14 @@ namespace SchoolManagementApp
             selectedClass = _repository.GetClassByName(className);
             if (selectedClass == null)
             {
-                throw new Exception("Class not found!");
+                Console.WriteLine("Class not found!");
             }
-            selectedClass.Students.Add(newStudent);
-            _repository.Update(selectedClass);
-            Console.WriteLine("Student added!");
+            else
+            {
+                selectedClass.Students.Add(newStudent);
+                Console.WriteLine("Student added!");
+            }
+            
         }
 
         public void AddTeacher(string className, Teachers newTeacher)
@@ -45,19 +51,23 @@ namespace SchoolManagementApp
             var selectedClass = _repository.GetClassByName(className);
             if (selectedClass == null)
             {
-                throw new Exception("Class not found!");
-            }
-
-            if (selectedClass.Teacher != null)
-            {
-                Console.WriteLine($"{selectedClass.Teacher.Name} {selectedClass.Teacher.Surname} is the teacher of the {selectedClass.Name}");
+                Console.WriteLine("Class not found!");
             }
             else
             {
-                selectedClass.Teacher = newTeacher;
-                _repository.Update(selectedClass);
-                Console.WriteLine("Teacher added!");
+                if (selectedClass.Teacher != null)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"{selectedClass.Teacher.Name} {selectedClass.Teacher.Surname} is the teacher of the class '{selectedClass.Name}'");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    selectedClass.Teacher = newTeacher;
+                    Console.WriteLine("Teacher added!");
+                }
             }
+            
         }
 
         public List<Classes> GetAllClasses()

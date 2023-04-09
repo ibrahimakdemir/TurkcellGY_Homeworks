@@ -120,7 +120,7 @@ namespace SchoolManagementApp
 
             do
             {
-                Console.WriteLine("Please enter the student ID(pozitive integers): ");
+                Console.WriteLine("Please enter the ID(pozitive integers): ");
                 string input = Console.ReadLine();
                 isValid = int.TryParse(input, out id) && id > 0;
 

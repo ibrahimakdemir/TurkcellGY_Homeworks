@@ -81,15 +81,16 @@ do
                 var selectedClassName = consoleUIService.SelectClass();
                 var students = schoolService.GetStudents(selectedClassName);
 
-                if (students.Count > 0)
+                if (students.Count >= 1)
                 {
                     n = 1;
                     Console.Clear();
                     Console.WriteLine($"Class: {selectedClassName}");
-                    Console.WriteLine($"Teacher: {schoolService.GetTeacher(selectedClassName).Name??"Teacher not found!"} {schoolService.GetTeacher(selectedClassName).Surname}");
-                    Console.WriteLine("Name\tSurname\t\tSchool Id");
+                    if(schoolService.GetClassByName(selectedClassName).Teacher != null)
+                        Console.WriteLine($"Teacher: {schoolService.GetTeacher(selectedClassName).Name} {schoolService.GetTeacher(selectedClassName).Surname}");
+                    Console.WriteLine("Name - Surname - School Id");
 
-                    students.ForEach(students => Console.WriteLine($"{n++}- {students.Name}\t{students.Surname}\t{students.StudentId}"));
+                    students.ForEach(students => Console.WriteLine($"{n++}- {students.Name} - {students.Surname} - {students.StudentId}"));
                 }
                 else
                 {

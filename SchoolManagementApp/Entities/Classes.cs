@@ -15,7 +15,6 @@ namespace SchoolManagementApp.Entities
         public Classes()
         {
             Students = new List<Students>();
-            Teacher = new Teachers();
         }
     }
 
@@ -41,20 +40,6 @@ namespace SchoolManagementApp.Entities
         public Classes GetClassByName(string className)
         {
             return classes.FirstOrDefault(c => c.Name == className);
-        }
-
-        public void Update(Classes newClass)
-        {
-            //update the class
-
-            var oldClass = classes.FirstOrDefault(c=> c.Name == newClass.Name);
-
-            if (oldClass != null)
-            {
-                classes.Remove(oldClass);
-                classes.Add(newClass);
-            }
-
         }
     }
 }
